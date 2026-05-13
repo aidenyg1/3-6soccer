@@ -15,18 +15,19 @@ This project is a dedicated web platform for Class 3-6 students to track their s
 ### **Features Implemented (v1.0)**
 *   **Global Layout:** Responsive grid system with header and main navigation.
 *   **Theme:** "Modern & Dynamic" with noise texture and glow effects.
-*   **Scoreboard Section:** Uses `<soccer-match-card>` components.
-*   **Highlights Section:** Uses `<soccer-highlight>` components for video embeds.
-*   **Schedule Section:** Displays upcoming match details.
-*   **Team Section:** Uses `<soccer-player-card>` to showcase 3-6 class representatives.
+*   **Scoreboard Section:** Uses `<soccer-match-card>` components with deep links to details.
+*   **Highlights Section:** Uses `<soccer-highlight>` components linked to dedicated pages.
+*   **Multi-Page Architecture:** Dedicated `match-detail.html` (e.g., `match-3-3.html`) for deep match analysis and full-screen video.
+*   **Team Section:** Uses `<soccer-player-card>` to showcase 3-6 class representatives, also used in match detail scorer lists.
 
 ---
 
-## **Current Plan: Initial Implementation**
+## **Current Plan: Structural Stabilization & Multi-Page Rollout**
 
 ### **Step 1: Foundational Structure**
 *   [x] Update `index.html` with semantic structure.
 *   [x] Initialize `style.css` with CSS variables and base resets.
+*   [x] Implement Multi-page navigation (Match details).
 
 ### **Step 2: Component Development**
 *   [x] Define `SoccerMatchCard` component in `main.js`.
@@ -35,4 +36,5 @@ This project is a dedicated web platform for Class 3-6 students to track their s
 
 ### **Step 3: Styling & Polishing**
 *   [x] Add global effects (noise, glow) in `style.css`.
-*   [x] Ensure mobile responsiveness.
+*   [x] Ensure mobile responsiveness (Clamp, Responsive Grids).
+*   [x] Fix layout breaks on detail pages (Video wrapper, Utility classes).
