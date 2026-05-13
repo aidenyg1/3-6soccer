@@ -114,6 +114,7 @@ class SoccerHighlight extends HTMLElement {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          object-position: center;
         }
         .media-container img { opacity: 0.8; cursor: pointer; }
         
@@ -207,6 +208,7 @@ class SoccerPlayerCard extends HTMLElement {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          object-position: center 20%;
           border-radius: 50%;
         }
         .name { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: white; margin-bottom: 0.2rem; }
