@@ -1,14 +1,106 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>3-6반 축구 허브 | 경기 결과 및 하이라이트</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+  <header>
+    <div class="container">
+      <h1>3-6 SOCCER HUB</h1>
+      <nav>
+        <ul>
+          <li><a href="#results">경기 결과</a></li>
+          <li><a href="#highlights">하이라이트</a></li>
+          <li><a href="#schedule">경기 일정</a></li>
+          <li><a href="#team">선수단</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero">
+      <div class="container">
+        <h2>우리의 승리는 계속된다</h2>
+        <p>3학년 6반의 열정적인 축구 여정을 함께하세요.</p>
+      </div>
+    </section>
+
+    <section id="results" class="container">
+      <h3>최근 경기 결과</h3>
+      <div class="grid" id="results-grid">
+        <soccer-match-card 
+          opponent="3학년 3반" 
+          score="3 : 2" 
+          date="2026.05.13 1교시" 
+          result="win"
+          scorers="박준우, 한성종, 이재원 (각 1골) / 최이준 (2골, 3반)">
+        </soccer-match-card>
+      </div>
+    </section>
+
+    <section id="highlights" class="container">
+      <h3>경기 하이라이트</h3>
+      <div class="grid" id="highlights-grid">
+        <soccer-highlight 
+          title="3-3반 경기 종료 직전 PK골" 
+          thumbnail="assets/images/pk-thumbnail.jpg"
+          src="assets/videos/pk-goal.mp4">
+        </soccer-highlight>
+      </div>
+    </section>
+
+    <section id="schedule" class="container">
+      <h3>향후 경기 일정</h3>
+      <div class="grid" id="schedule-grid">
+        <soccer-match-card 
+          opponent="3학년 1반" 
+          score="vs" 
+          date="2026.05.18 (교시 미정)" 
+          result="upcoming">
+        </soccer-match-card>
+      </div>
+    </section>
+
+    <section id="team" class="container">
+      <h3>3-6반 대표 선수단</h3>
+      <div class="grid" id="team-grid">
+        <soccer-player-card 
+          name="황용국" 
+          position="FW / 주장" 
+          image="assets/images/player-hwang.jpg">
+        </soccer-player-card>
+        <soccer-player-card 
+          name="이재원" 
+          position="DF / 에이스" 
+          image="assets/images/player-lee.jpg">
+        </soccer-player-card>
+        <soccer-player-card 
+          name="최은율" 
+          position="FW / 반장" 
+          image="assets/images/player-choi.jpg">
+        </soccer-player-card>
+        <soccer-player-card 
+          name="류영인" 
+          position="GK" 
+          image="assets/images/player-ryu.jpg">
+        </soccer-player-card>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 3-6 Soccer Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script defer type="module" src="/main.js"></script>
 </body>
 </html>
