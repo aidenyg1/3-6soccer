@@ -15,6 +15,7 @@ class SoccerMatchCard extends HTMLElement {
     const date = this.getAttribute('date') || '';
     const result = this.getAttribute('result') || 'upcoming'; // win, draw, loss, upcoming
     const scorers = this.getAttribute('scorers') || '';
+    const link = this.getAttribute('link') || '';
 
     this.shadowRoot.innerHTML = `
       <style>
@@ -30,6 +31,9 @@ class SoccerMatchCard extends HTMLElement {
           transition: transform 0.3s ease, box-shadow 0.3s ease;
           position: relative;
           overflow: hidden;
+          cursor: ${link ? 'pointer' : 'default'};
+          text-decoration: none;
+          color: inherit;
         }
         .card:hover {
           transform: translateY(-5px);
@@ -61,14 +65,22 @@ class SoccerMatchCard extends HTMLElement {
           border-top: 1px solid oklch(100% 0 0 / 0.1);
           padding-top: 0.5rem;
         }
+        .detail-link {
+          margin-top: 1rem;
+          display: inline-block;
+          font-size: 0.8rem;
+          color: var(--primary-color);
+          text-decoration: underline;
+        }
       </style>
-      <div class="card">
+      <${link ? `a href="${link}"` : 'div'} class="card">
         <div class="result-badge ${result}">${result}</div>
         <div class="date">${date}</div>
         <div class="opponent">vs ${opponent}</div>
         <div class="score">${score}</div>
         ${scorers ? `<div class="scorers">⚽️ ${scorers}</div>` : ''}
-      </div>
+        ${link ? `<div class="detail-link">상세 결과 보기 →</div>` : ''}
+      </${link ? 'a' : 'div'}>
     `;
   }
 }
@@ -88,6 +100,7 @@ class SoccerHighlight extends HTMLElement {
     const src = this.getAttribute('src') || ''; // Local video path
 
     const isLocal = !!src;
+    const link = this.getAttribute('link') || '';
 
     this.shadowRoot.innerHTML = `
       <style>
@@ -97,6 +110,9 @@ class SoccerHighlight extends HTMLElement {
           overflow: hidden;
           transition: transform 0.3s ease;
           border: 1px solid oklch(100% 0 0 / 0.1);
+          text-decoration: none;
+          display: block;
+          color: inherit;
         }
         .highlight-card:hover {
           transform: scale(1.02);
@@ -153,16 +169,16 @@ class SoccerHighlight extends HTMLElement {
           z-index: 10;
         }
       </style>
-      <div class="highlight-card">
+      <${link ? `a href="${link}"` : 'div'} class="highlight-card">
         <div class="media-container">
           ${isLocal 
             ? `<video src="${src}" controls poster="${thumbnail}"></video>`
-            : `<img src="${thumbnail}" alt="${title}" onclick="window.open('https://www.youtube.com/watch?v=${videoId}', '_blank')">
+            : `<img src="${thumbnail}" alt="${title}" ${!link ? `onclick="window.open('https://www.youtube.com/watch?v=${videoId}', '_blank')"` : ''}>
                <div class="play-btn"></div>`
           }
         </div>
         <div class="title">${title}</div>
-      </div>
+      </${link ? 'a' : 'div'}>
     `;
   }
 }

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3학년 3반 전 상세 결과 | 3-6 SOCCER HUB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href='/style.css' rel='stylesheet'>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="/" style="text-decoration: none; color: inherit;">3-6 SOCCER HUB</a> <span style="font-size: 0.8rem; vertical-align: middle; color: var(--text-secondary); letter-spacing: 0; font-family: 'Inter', sans-serif; margin-left: 0.5rem; opacity: 0.8;">by 황용국</span></h1>
+      <nav>
+        <ul>
+          <li><a href="/#results">경기 결과</a></li>
+          <li><a href="/#highlights">하이라이트</a></li>
+          <li><a href="/#team">선수단</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="match-video" class="container">
+      <div style="margin-bottom: 2rem;">
+        <a href="/" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">← 메인으로 돌아가기</a>
+      </div>
+      
+      <h3>3학년 3반전 하이라이트</h3>
+      <div style="background: var(--surface-color); border-radius: 20px; overflow: hidden; border: 1px solid oklch(100% 0 0 / 0.1); box-shadow: var(--deep-shadow);">
+        <video src="assets/videos/freekick-goal.mp4" controls poster="assets/images/freekick-thumbnail.jpg" style="width: 100%; display: block; aspect-ratio: 16/9;"></video>
+      </div>
+      <div style="padding: 2rem 0;">
+        <h2 style="font-size: 3rem; color: var(--primary-color);">3 : 2 승리</h2>
+        <p style="color: var(--text-secondary); font-size: 1.2rem;">2026.05.13 1교시 | 끝까지 포기하지 않은 6반의 대역전극</p>
+      </div>
+    </section>
+
+    <section id="match-scorers" class="container">
+      <h3>오늘의 득점자</h3>
+      <div class="grid">
+        <soccer-player-card 
+          name="박준우" 
+          position="FW" 
+          image="assets/images/player-park-junwoo.jpg"
+          motto="한 골 더!">
+        </soccer-player-card>
+        <soccer-player-card 
+          name="한성종" 
+          position="FW" 
+          image="assets/images/player-han.jpg"
+          motto="나만 믿어">
+        </soccer-player-card>
+        <soccer-player-card 
+          name="이재원" 
+          position="DF / 에이스" 
+          image="assets/images/player-lee.jpg"
+          motto="이길게">
+        </soccer-player-card>
+      </div>
+    </section>
+
+    <section id="match-stats" class="container">
+      <h3>경기 총평</h3>
+      <div style="background: var(--surface-color); padding: 2rem; border-radius: 12px; border: 1px solid oklch(100% 0 0 / 0.1);">
+        <p>전반전 이준 선수의 활약으로 2:1로 뒤처지던 상황이었으나, 후반전 이재원 선수의 극적인 프리킥 골과 박준우, 한성종 선수의 연속 골로 짜릿한 역전승을 거두었습니다. 주주 황용국 선수의 헌신적인 수비와 류영인 키퍼의 결정적인 세이브가 빛난 경기였습니다.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 3-6 Soccer Hub. All rights reserved.</p>
+      <p style="margin-top: 0.5rem; color: var(--primary-color); font-weight: bold;">Created by 황용국 (주장)</p>
+    </div>
+  </footer>
+
+  <script defer type="module" src="/main.js"></script>
+</body>
+</html>
