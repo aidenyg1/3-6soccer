@@ -179,6 +179,7 @@ class SoccerPlayerCard extends HTMLElement {
     const name = this.getAttribute('name') || 'Player';
     const position = this.getAttribute('position') || 'Position';
     const image = this.getAttribute('image') || '';
+    const motto = this.getAttribute('motto') || '';
 
     this.shadowRoot.innerHTML = `
       <style>
@@ -212,7 +213,15 @@ class SoccerPlayerCard extends HTMLElement {
           border-radius: 50%;
         }
         .name { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: white; margin-bottom: 0.2rem; }
-        .position { font-size: 0.8rem; color: var(--primary-color, oklch(75% 0.18 150)); font-weight: bold; text-transform: uppercase; }
+        .position { font-size: 0.8rem; color: var(--primary-color, oklch(75% 0.18 150)); font-weight: bold; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .motto { 
+          font-size: 0.9rem; 
+          color: var(--text-secondary, oklch(85% 0.02 250)); 
+          font-style: italic;
+          border-top: 1px solid oklch(100% 0 0 / 0.1);
+          padding-top: 0.5rem;
+          margin-top: 0.5rem;
+        }
       </style>
       <div class="player-card">
         <div class="photo-container">
@@ -220,6 +229,7 @@ class SoccerPlayerCard extends HTMLElement {
         </div>
         <div class="name">${name}</div>
         <div class="position">${position}</div>
+        ${motto ? `<div class="motto">" ${motto} "</div>` : ''}
       </div>
     `;
   }
