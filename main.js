@@ -25,7 +25,7 @@ class SoccerMatchCard extends HTMLElement {
         .card {
           background: oklch(25% 0.03 250);
           border-radius: 12px;
-          padding: 1.5rem;
+          padding: clamp(1rem, 4vw, 1.5rem);
           text-align: center;
           border: 1px solid oklch(100% 0 0 / 0.1);
           transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -34,6 +34,11 @@ class SoccerMatchCard extends HTMLElement {
           cursor: ${link ? 'pointer' : 'default'};
           text-decoration: none;
           color: inherit;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 180px;
         }
         .card:hover {
           transform: translateY(-5px);
@@ -55,15 +60,26 @@ class SoccerMatchCard extends HTMLElement {
         .loss { background: oklch(60% 0.15 20); color: white; }
         .upcoming { background: oklch(85% 0.2 80); color: black; }
 
-        .date { font-size: 0.8rem; color: oklch(85% 0.02 250 / 0.7); margin-bottom: 0.5rem; }
-        .opponent { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; margin: 0.5rem 0; }
-        .score { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--primary-color, oklch(75% 0.18 150)); line-height: 1; }
+        .date { font-size: clamp(0.7rem, 2vw, 0.8rem); color: oklch(85% 0.02 250 / 0.7); margin-bottom: 0.5rem; }
+        .opponent { 
+          font-family: 'Bebas Neue', sans-serif; 
+          font-size: clamp(1.2rem, 5vw, 1.8rem); 
+          margin: 0.5rem 0;
+          overflow-wrap: break-word;
+        }
+        .score { 
+          font-family: 'Bebas Neue', sans-serif; 
+          font-size: clamp(2.5rem, 10vw, 4rem); 
+          color: var(--primary-color, oklch(75% 0.18 150)); 
+          line-height: 1; 
+        }
         .scorers { 
           margin-top: 1rem; 
-          font-size: 0.85rem; 
+          font-size: clamp(0.75rem, 2.5vw, 0.85rem); 
           color: var(--text-secondary, oklch(85% 0.02 250)); 
           border-top: 1px solid oklch(100% 0 0 / 0.1);
           padding-top: 0.5rem;
+          word-break: keep-all;
         }
         .detail-link {
           margin-top: 1rem;
